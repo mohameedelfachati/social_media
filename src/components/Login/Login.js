@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 export const Login = () => {
-    const login = () => {}
+    const login = (email, password) => {
+        
+    }
     return (<div className='login__page'>
 <Form>
    <Form.Group controlId="formBasicEmail">

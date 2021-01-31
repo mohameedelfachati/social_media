@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { useHistory, withRouter } from "react-router-dom";
 
 const API_URL = "http://localhost:8080/api/auth";
-const LoginPage = () => {
+const Register = () => {
     let history = useHistory();
     const signup = (username,email,password,imageUrl) => {
         history.push("/login");
@@ -47,4 +47,4 @@ const LoginPage = () => {
   </div>
 }
 
-export default withRouter(LoginPage);
+export default withRouter(Register);

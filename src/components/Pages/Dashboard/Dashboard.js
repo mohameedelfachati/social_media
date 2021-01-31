@@ -1,11 +1,12 @@
 import {useContext} from 'react';
 import {Context} from '../../../Providers/ContextProvider';
-import LoginPage from '../Login/LoginPage'
+import Register from '../Login/LoginPage';
+import {App} from "../App/App";
 export const Dashboard = () => {
 
     const { connected } = useContext(Context) ;
 
     return <div>{
-        !connected ? <LoginPage /> : 'not connected'
+        !connected ? <Register /> : <App />
         }</div>
 }
