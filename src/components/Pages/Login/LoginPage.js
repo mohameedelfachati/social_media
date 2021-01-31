@@ -2,7 +2,22 @@ import './LoginPage.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-export const LoginPage = () => {
+import { useHistory, withRouter } from "react-router-dom";
+
+const API_URL = "http://localhost:8080/api/auth";
+const LoginPage = () => {
+    let history = useHistory();
+    const signup = (username,email,password,imageUrl) => {
+        history.push("/login");
+        // axios.post(API_URL+"signup",{
+        //     username,
+        //     email,
+        //     password,
+        //     imageUrl
+        // }).then(()=>{
+
+        // });
+    }
     return <div className="signup__page">
     <Form>
     <Form.Group controlId="formBasicusername">
@@ -31,3 +46,5 @@ export const LoginPage = () => {
 
   </div>
 }
+
+export default withRouter(LoginPage);

@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {Context} from '../../../Providers/ContextProvider';
-import {LoginPage} from '../Login/LoginPage'
+import LoginPage from '../Login/LoginPage'
 export const Dashboard = () => {
 
     const { connected } = useContext(Context) ;
