@@ -7,11 +7,17 @@ import ForumIcon from '@material-ui/icons/Forum';
 import NotificationActiveIcon from '@material-ui/icons/NotificationsActive';
 import FlagIcon from '@material-ui/icons/Flag';
 import { Avatar, IconButton } from '@material-ui/core';
+import { useHistory, withRouter } from "react-router-dom";
 
 export const Header = ({
     name,
     imgUrl
 }) => {
+    let history=useHistory()
+    const Redirect = ()=>{
+        history.push("/Message");
+
+    }
     return (
         <div className="header">
            <div className="header__left" >
@@ -38,7 +44,7 @@ export const Header = ({
                    <Avatar src={imgUrl}/>
                    <h4>{name}</h4>
                </div>
-               <IconButton>
+               <IconButton onClick={Redirect}>
                    <ForumIcon />
                </IconButton>
                <IconButton>
@@ -48,4 +54,5 @@ export const Header = ({
         </div>
     )
 }
+export default withRouter(Header);
 

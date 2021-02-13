@@ -4,18 +4,18 @@ import   "./MessageSender.css";
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import axios from "axios";
-const API_URL = "http://localhost:8080/api/auth";
+const API_URL = "https://facebookclone11.herokuapp.com/api/post";
 function MessageSender({
     name,
     imgUrl
 }) {
     const [message, setMessage] = useState("");
-    const [image, setimage] = useState("");
-    const poste= (image,message)=>{
-        return axios.post(API_URL+'poste',{
-            image,
-            message
-        })
+    const [image, setImage] = useState("");
+    const poste= ()=>{
+        return axios.post(API_URL,{
+            imageUrl: image,
+            message: message 
+        }).then(()=>console.log(image)).catch((err)=>console.log(err));
        
     }
     return (
@@ -31,11 +31,11 @@ function MessageSender({
                className="messageSender__input" />
               <input 
                value={image}
-               onChange={(e)=>setimage(e.target.value)}
-               placeholder={`image url`} 
+               onChange={(e)=>setImage(e.target.value)}
+               placeholder={'image url'}
                className="messageSender__input" />
 
-              <button onClick={poste} type='submit'>Hidden submit</button>
+              <button onClick={poste} >Hidden submit</button>
               </form>
           </div>
           <div className="messageSender__bottom">
